@@ -39,6 +39,14 @@ func Default() Config {
 	}
 }
 
+func Westend() Config {
+	return Config{
+		RPCURL:           "wss://westend.api.onfinality.io/public-ws",
+		DialTimeout:      10 * time.Second,
+		SubscribeTimeout: 5 * time.Second,
+	}
+}
+
 // ExtractDefaultRPCURL reads the env variable RPC_URL and returns it. If that variable is unset or empty,
 // it will fallback to "ws://127.0.0.1:9944"
 func extractDefaultRPCURL() string {
